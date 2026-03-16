@@ -1,0 +1,6 @@
+fix!(plugins): Removes all LSP instances
+fix!(Copilot): Copilot Plugin Deleted
+fix!:(Ollama Codeium):  Remove Ollama from codeium used cloud IA Assistance
+fix:(Mason): Add required DAP, LSP and Linter plugins
+fix(vim-poliglit): Add vim-poliglit for autocompletions
+chore(New nmap):  Add a <leader>fc assigned to close current buffer

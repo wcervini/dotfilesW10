@@ -1,0 +1,36 @@
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.wrap = false
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.termguicolors = true
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.updatetime = 50
+vim.opt.mouse = "a"
+vim.opt.wrap = true
+vim.opt.clipboard = "unnamedplus"
+vim.opt.shadafile = "" -- Deshabilita ShaDa permanentemente
+vim.opt.fileformat = "unix"
+vim.opt.encoding = "utf-8"
+vim.opt.shell = "pwsh" -- o "powershell" si usas la versión 5
+vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+vim.opt.shellquote = ""
+vim.opt.shellxquote = ""
+vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+vim.opt.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_node_provider = 0  
+vim.filetype.add({
+	extension = {
+		html = "djangohtml",
+		astro = "astro",
+	},
+})
