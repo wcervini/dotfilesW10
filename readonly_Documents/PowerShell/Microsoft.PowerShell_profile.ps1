@@ -30,7 +30,7 @@ function nvconfig { nvim $env:nvim_config\init.lua }
 
 # ========== FUNCIONES PYTHON & DEV (RECUPERADAS) ==========
 function cvenv {
-    python -m venv .venv
+    uv venv
     Write-Host "✅ Entorno virtual .venv creado." -ForegroundColor Cyan
 }
 
@@ -66,7 +66,7 @@ Set-PSReadLineKeyHandler -Key Ctrl+º -ScriptBlock {
 }
 
 # ========== CARGA DE ENTORNO Y SCRIPTS EXTERNOS ==========
-fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
+#fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
 
 # Aquí cargamos tus otros archivos (Alias.ps1, Ayuda.ps1, Dots.ps1, etc.)
 $script_dir = Join-Path (Split-Path $PROFILE) "Scripts"
@@ -77,4 +77,5 @@ foreach ($script in $scripts_to_load) {
     if (Test-Path $full_path) { . $full_path }
 }
 
-
+#Invoke-Expression -Command "& `"C:\Users\Underghround\scoop\apps\powertoys\current\install-context.ps1`""
+fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression

@@ -6,11 +6,12 @@ Set-Alias -Name vi -Value nvim -Option AllScope -Scope Global -Force
 Set-Alias -Name sobs "$HOME\Documents\PowerShell\Scripts\Manage-OBS.ps1"
 Set-Alias -Name cz -Value chezmoi -Option AllScope -Scope Global -Force
 Set-Alias -Name .. -Value eza -Option Allscope -Scope Global -Force
+Set-Alias -Name ls -Value lsd 
 # ========== PSEUDO-ALIASES CON ARGUMENTOS ==========
 # Estos funcionan como alias pero aceptan argumentos
 function cme { chezmoi edit $args}
 function apply{ . $PROFILE}
-function ls { eza --icons $args }
+function lsd { eza --icons $args }
 function ll { eza --icons -l --git $args }
 function la { eza --icons -a $args }
 function grep { Select-String @args }
@@ -24,6 +25,14 @@ function envcd {
     } else {
         Write-Warning "La variable de entorno '$name' no existe."
     }
+}
+
+function envls {
+    Get-ChildItem Env: | Where-Object { 
+        # Filtramos solo las que son rutas de carpetas existentes
+        Test-Path $_.Value -PathType Container -ErrorAction SilentlyContinue 
+    } | Select-Object @{Name="Variable"; Expression={$_.Name}}, @{Name="Ruta"; Expression={$_.Value}} | 
+    Format-Table -AutoSize
 }
 
 function cmcd{

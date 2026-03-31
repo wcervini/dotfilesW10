@@ -1,6 +1,6 @@
 # ========== INICIALIZACIÓN ==========
 function ayuda {
-    Write-Host "`n🚀 PowerShell + Neovim cargado" -ForegroundColor Green
+    Write-Host "😏 Use el comando 'ayuda' para más info 💥"
     Write-Host "📂 nvim:   $env:nvim_config" -ForegroundColor Cyan
     Write-Host "💾 data:   $env:nvim_data"   -ForegroundColor Cyan
     Write-Host "`nComandos disponibles:"       -ForegroundColor Yellow
@@ -26,6 +26,11 @@ function ayuda {
         "venvactivate - Activa el entorno virtual .venv",
         "proyectos  - Cambia al directorio D:\\proyectos",
         "nvwezterm  - Cambia al directorio D:\\proyectos si existe wezterm"
+        "venvdeactivate - Activa el entorno virtual .venv usando UV",
+        "envls - Muestra las variables de entorno actuales",
+        "envcd - Accede al directorio de la variable de entorno"
+
+
     )
 
     $cmds | ForEach-Object { Write-Host "  $_" -ForegroundColor Gray }
